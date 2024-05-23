@@ -7,6 +7,7 @@ console.log(typeof s1, typeof s2);
 //  .length : 문자열 길이 확인하는 속이
 console.log("String: ", s1, ", length:", s1.length);
 
+console.log("\n========== 문자열 메서드들")
 //  문자열 추출 메서드
 console.log(s1.charAt(7));  //  특정 인덱스에 위치한 문자: charAt
 //  ES는 문자열도 배열처럼 활용
@@ -39,6 +40,7 @@ console.log(s1, s1_changed);
 //  화이트스페이스(공백, 탭, 개행 등) 제거
 console.log("            Hello               ".trim()); //  화이트스페이스 제거
 
+console.log("\n========== 이스케이프 문자열")
 //  ES string 보충
 //  이스케이프  -> 키보드로 입력 불가하거나 특수한 의미를 가진 문자 (\)
 //  \n  : 개행
@@ -58,13 +60,13 @@ console.log(message);
 message = 'I\'m going';
 console.log(message);
 
+console.log("\n========== 여러 줄 문자열");
 //  여러 줄 문자열
 message = "예전에는 \n" +
             "여러줄 문자열을 만드는 것이 \n" +
             "쉽지 않았습니다.";
 message = "예전에는 \n여러줄 문자열을 만드는 것이 \n쉽지 않았습니다.";            
 console.log(message);
-
 
 message = `하지만 ES6이상에서는
 아주 손쉽게
