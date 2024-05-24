@@ -83,6 +83,7 @@ const f3_arrow = (a, b) => {
     console.log("화살표 함수");
     return a + b;
 };
+console.log(f3_arrow(10, 20));
 
 //  콜백 함수에 화살표 함수로 계산식 정의
 calculator(10, 20, (v1, v2) => v1 + v2);
