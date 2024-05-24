@@ -3,14 +3,14 @@
 //  - for문 버전 (*)
 //  - while문 버전
 
-console.log("\n========== 구구단 for 버전");
-for (let dan = 2; dan <= 9; dan ++) {
-    console.log(dan + "단");
-    for (let num = 1; num <= 9; num ++) {
-        console.log(dan + " * " + num + " = " + dan * num);
-    }
-    console.log();
-}
+// console.log("\n========== 구구단 for 버전");
+// for (let dan = 2; dan <= 9; dan ++) {
+//     console.log(dan + "단");
+//     for (let num = 1; num <= 9; num ++) {
+//         console.log(dan + " * " + num + " = " + dan * num);
+//     }
+//     console.log();
+// }
 
 // console.log("\n========== 구구단 while 버전");
 // let dan = 2;
@@ -48,19 +48,19 @@ for (let dan = 2; dan <= 9; dan ++) {
 //     console.log(stars);
 // }
 
-// console.log("\n========== 역삼각형 while 버전");
-// let count = 5;
-// while(count > 0) {
-//     let stars = "";
-//     let col = 1;
+console.log("\n========== 역삼각형 while 버전");
+let count = 5;
+while(count > 0) {
+    let stars = "";
+    let col = 1;
 
-//     while (col <= count) {
-//         stars += "*";
-//         col ++;
-//     }
-//     console.log(stars);
-//     count --;
-// }
+    while (col <= count) {
+        stars += "*";
+        col ++;
+    }
+    console.log(stars);
+    count --;
+}
 
 
 
