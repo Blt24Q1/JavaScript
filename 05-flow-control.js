@@ -62,8 +62,19 @@ while(count > 0) {
     count --;
 }
 
+//  for ... in : 객체의 속성 키를 반복
+const obj = {
+    name: "홍길동",
+    age: 28,
+    job: "도적"
+}
 
+for (let key in obj) {
+    console.log(`${key} -> ${obj[key]}`);
+}
 
-
-//  TODO : for ... in, for ... of
-//      array extended 수업 이후에 추가 진행
+//  for ... of : 배열을 순회
+const arr = [1, 2, 3, 4, 5];
+for (let item of arr) {
+    console.log(item);
+}
