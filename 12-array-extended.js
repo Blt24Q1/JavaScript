@@ -89,6 +89,7 @@ function testReduce() {
 // testReduce();
 
 function testReduce2() {
+    console.log("===== reduce 함수로 map 함수 만들기");
     //  반복되는 모든 것에는 reduce 함수를 적용할 수 있다
     //  map 함수의 기능을 reduce 함수로 구현해 봄
     //  testMap 함수의 기능을 reduce 함수로 작성 : 요소값 * 2
@@ -105,7 +106,61 @@ function testReduce2() {
 // testReduce2();
 
 function testReduce3() {
+    console.log("===== reduce 함수로 filter 함수 구현해보기");
     //  연습문제: reduce 함수를 이용, filter 함수 구현해보기
     //  reduce 함수를 이용, numbers 배열의 짝수 배열을 만들어보기
+    console.log("원본배열:", numbers);
 
+    let result = numbers.reduce((acc, value) => {
+        if (value % 2 == 0) {   //  짝수
+            acc.push(value);            
+        }
+        return acc;
+    }, []);
+    console.log("짝수배열:", result);
 }
+// testReduce3();
+
+const data = [
+    { name: '철수', kor: 85, eng: 92, math: 88},
+    { name: '영희', kor: 70, eng: 74, math: 95},
+    { name: '지후', kor: 91, eng: 89, math: 85},
+    { name: '지수', kor: 65, eng: 70, math: 72},
+    { name: '윤정', kor: 80, eng: 90, math: 91}
+];
+
+function testDataPipeline() {
+    console.log("===== map, filter, sort, reduce 테스트");
+    console.log("원본데이터:", data);
+
+    //  map 함수 이용 -> total 파생변수 생성
+    const studentsWithTotal = data.map(student => ({
+        ...student, 
+        total: student.kor + student.eng + student.math 
+    }));
+    console.log("map:", studentsWithTotal);
+
+    //  filter 함수 이용 -> total >= 240 만 추출
+    const filteredStudents = studentsWithTotal.filter(student => student.total >= 240);
+    console.log("총점240이상:", filteredStudents);
+
+    //  sort 함수 이용 -> 총점 기준으로 정렬
+    // const sortedStudents = filteredStudents.sort((a, b) => a.total - b.total);  //  ASC
+    const sortedStudents = filteredStudents.sort((a, b) => b.total - a.total);  //  DESC
+    console.log("total순 정렬:", sortedStudents);
+
+    //  reduce 함수 이용 -> 학생들의 총점 평균
+    const totalSum = sortedStudents.reduce((acc, student) => acc + student.total, 0);
+    console.log("총점240이상 학생들의 총점:", totalSum);
+    const avgTotalScore = totalSum / sortedStudents.length;
+
+    console.log("데이터 파이프라인 구축:",
+        data.map(student => ({
+            ...student, 
+            total: student.kor + student.eng + student.math 
+        }))
+        .filter(student => student.total >= 240)
+        .sort((a, b) => b.total - a.total)
+        .reduce((acc, student) => acc + student.total, 0) / 3);
+}
+testDataPipeline();
