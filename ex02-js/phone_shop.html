@@ -57,7 +57,7 @@
                 mainImage.setAttribute("title", 
                     obj.getAttribute("title"));
 
-                let productTitle = document.querySelector("#product-info h2");
+                let productTitle = document.querySelector("#product-info > h2");
                 console.log(productTitle);
                 //  콘텐츠 변경 방법 : innerText, innerHTML
                 productTitle.innerText = obj.getAttribute("title");
