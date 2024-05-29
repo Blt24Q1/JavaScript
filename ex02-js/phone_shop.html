@@ -44,8 +44,9 @@
 
         let products = document
             .getElementsByClassName("sub-image");
-        for (let i = 0; i < products.length; i++) {
-            let product = products[i];  //  개별 요소 검색
+        // for (let i = 0; i < products.length; i++) {
+        //     let product = products[i];  //  개별 요소 검색
+        for (let product of products) {
             console.log(product);
             //  개별 click 이벤트 핸들러 부착
             product.addEventListener("click", event => {
@@ -119,13 +120,19 @@
             //  하단 Products 이미지들의 title 속성도 변경
             let subs = document.getElementsByClassName("sub-image");
             console.log(".sub-image:", subs);
+            
             //  루프를 돌면서 속성 변경
-            for (let i = 0; i < subs.length; i++) {
-                subs[i].setAttribute("title", 
-                    `제품: ${subs[i].getAttribute("title")}`);
+            // for (let i = 0; i < subs.length; i++) {
+            //     subs[i].setAttribute("title", 
+            //         `제품: ${subs[i].getAttribute("title")}`);
+            // }
+            for (let sub of subs) {
+                sub.setAttribute("title", 
+                    `제품: ${sub.getAttribute("title")}`);
             }
+            
         }
-        // testAttributes();
+        testAttributes();
 
         // // #main-image을 click하면 발생하는 이벤트 (정보) 확인
         // document.getElementById("main-image").onclick = event => {
