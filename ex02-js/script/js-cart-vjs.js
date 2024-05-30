@@ -31,7 +31,7 @@ function addItem() {
     const item = itemInput.value.trim();
 
     if (item.length > 0) {
-        console.log("추가아이템:", item);
+        // console.log("추가아이템:", item);
 
         //  추가할 요소 생성(li)
         let itemNode = document.createElement("li");
