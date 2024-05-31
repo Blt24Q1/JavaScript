@@ -72,10 +72,10 @@ function testAttributes() {
         }
 
         document.getElementById("keyword")
-            .addEventListener("keypress", event => {
+            // .addEventListener("keypress", event => {
             // .addEventListener("keydown", event => {
             // .addEventListener("change", event => {
-            // .addEventListener("keyup", event => {
+            .addEventListener("keyup", event => {
                 console.log(event); 
                 let message = event.target.value;
                 console.log(message);
