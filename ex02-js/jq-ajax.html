@@ -45,6 +45,7 @@
                     type: "GET",
                     dataType: "json",
                     success: function(response) {
+                        $("#list").html("");
                         // console.log(response);  //  JSON
 
                         //  영화 목록 정보
@@ -60,6 +61,7 @@
                             //  영화 정보 
                             const title = movie.title;
                             const director = movie.director;
+                            const year = movie.year;
                             const poster = "http://localhost:3000/images/" + 
                                         movie.image;
                             console.log(title, director, poster);
@@ -68,7 +70,7 @@
                             const tr = $("<tr>");   //  tr 요소 생성
                             tr.html(`
                                 <td><img src="${poster}" class="poster"></td>
-                                <td>${title}</td>
+                                <td>${title} (${year})</td>
                                 <td>${director}</td>`);
 
                             //  부모에 자식으로 추가
@@ -81,8 +83,9 @@
                     }
                 });
                 //  실습:
-                //  - 개별 영화 클릭하면 새창에
-                //  - 영화 상세 정보를 받아와서 표시
+                //  http://localhost:3000/movies/12
+                //  - 개별 영화 정보를 ajax로 받아와서
+                //  - HTML에 동적으로 생성하여 DOM에 추가하는 코드
             });
         });
     </script>
@@ -97,7 +100,7 @@
     </div>
 
     <!-- JSON을 받아와서 동적으로 만들 테이블 -->
-    <table id="list" border="1" width="640">
+    <table id="list" border="1" width="100%">
 
     </table>
 </body>
