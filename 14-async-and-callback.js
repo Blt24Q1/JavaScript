@@ -20,13 +20,13 @@ function logicA() {
 // logicA();
 
 //  비동기처리를 동기방식처럼 호출하기 위해 마련된 객체 -> Promise
-//  Pending, Fullfill, Reject
+//  Pending, Fulfill, Reject
 function logicPromise() {
     console.log("begin logicPromise");
 
     //  Promise 객체를 리턴
     return new Promise((resolve, reject) => {
-        //  resolve 함수 -> fullfill 상태로 이전시키는 역할
+        //  resolve 함수 -> fulfill 상태로 이전시키는 역할
         //  reject 함수 -> reject 상태로 이전시키는 역할
         console.log("begin logicPromise");
         
@@ -45,7 +45,7 @@ function testLogicPromise() {
     console.log("Test Logic Promise");
 
     logicPromise()  //  Promise를 반환하는 함수(혹은 객체)
-    .then(value => {    //  Promise 내부에서 resolve 함수로 전달해 준 값 (fullfill 상태로)
+    .then(value => {    //  Promise 내부에서 resolve 함수로 전달해 준 값 (fulfill 상태로)
         console.log("PROMISE resolve:", value);
     })
     .catch(reason => {  //  Promise 내부에서 reject 함수로 전달해 준 값 (rejected 상태로)
@@ -79,7 +79,8 @@ async function processData() {
     console.log("데이터를 가져오는 중...");
     try {
         //  await 키워드 : Promise가 해결될 때까지 코드를 일시 중지시킴
-        //                  Promise 해소되면 Promise의 결과값을 반환
+        //                  Promise 해소되면(resolve or reject 되면) 
+        //                  Promise의 결과값을 반환
         //  await 키워드 함수를 사용을 위해 async가 붙어 있어야 함
         const data = await fetchData();
         console.log("가져온 데이터:", data);
